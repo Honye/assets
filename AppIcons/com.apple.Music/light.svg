@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Music — Light</title>
+  <defs>
+    <linearGradient id="background" x2="0" y2="1">
+      <stop stop-color="#ff4d79"/>
+      <stop offset="0.55" stop-color="#ff174c"/>
+      <stop offset="1" stop-color="#ff0031"/>
+    </linearGradient>
+    <linearGradient id="noteFill" x1="0" y1="0" x2="0.2" y2="1">
+      <stop stop-color="#ffeaf0"/>
+      <stop offset="0.48" stop-color="#ffdae4"/>
+      <stop offset="1" stop-color="#f998ae"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0.65" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#fff7fa"/>
+      <stop offset="1" stop-color="#ffbaca"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-20%" width="160%" height="155%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="9" dy="18" stdDeviation="17" flood-color="#aa0028" flood-opacity="0.28"/>
+    </filter>
+    <filter id="bevel" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="soft"/>
+      <feOffset in="soft" dx="5" dy="7" result="offset"/>
+      <feComposite in="SourceAlpha" in2="offset" operator="out" result="edge"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.95"/>
+      <feComposite in2="edge" operator="in" result="shine"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="shine"/></feMerge>
+    </filter>
+    <path id="note" d="M 405 220 L 728 155 C 748 151 760 159 760 181 L 760 667 C 760 731 726 767 669 777 C 619 787 586 769 569 737 C 549 701 565 658 593 638 C 615 622 644 617 676 610 L 695 606 C 713 602 721 592 721 574 L 721 346 C 721 326 715 320 696 324 L 433 377 C 418 380 412 388 412 406 L 412 737 C 412 801 378 837 323 848 C 272 858 238 841 221 807 C 203 772 215 731 244 709 C 266 692 295 687 327 681 L 347 677 C 365 673 374 662 374 641 L 374 256 C 374 236 383 225 405 220 Z"/>
+  </defs>
+  <path fill="url(#background)" d="M0 0H1024V1024H0Z"/>
+  <g filter="url(#shadow)">
+    <use href="#note" fill="url(#noteFill)"/>
+  </g>
+  <use href="#note" fill="url(#noteFill)" filter="url(#bevel)"/>
+  <use href="#note" fill="none" stroke="url(#rim)" stroke-width="5" stroke-linejoin="round" opacity="0.75"/>
+</svg>
